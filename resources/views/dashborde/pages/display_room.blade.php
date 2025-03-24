@@ -30,8 +30,8 @@
                                 <td class="text-wrap"><img  width="60px" height="60px"src="room/{{$data->image}}" ></td>
                                 <td class="text-wrap">{{$data->room_type}}</td>
                                 <td class="text-wrap" style="white-space: normal; word-break: break-word;">{{$data->wifi}}</td>
-                               <td> <a  class="btn btn-danger"  href="{{url('room_delete', $data->id)}}" >Delete</a><br><br>
-                                <a class="btn btn-warning"  href="{{url('room_update', $data->id)}}" >Update</a></td>
+                               <td> <a  class="btn btn-danger"  href="{{url('room_delete', $data->id)}}" >Delete</a>
+                                <a class="btn btn-warning"  href="{{url('room_update', $data->id)}}" >update</a></td>
                             </tr>
                         @endforeach
                     </tbody>

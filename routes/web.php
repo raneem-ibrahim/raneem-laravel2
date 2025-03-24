@@ -68,9 +68,13 @@ Route::get('/about', function () {
                     Route::post('/mail/{id}', [AdminController::class,'mail']);
                     Route::get('/display_room', [AdminController::class,'display_room']);
                     Route::get('/room_delete/{id}', [AdminController::class,'room_delete']);
+                    // Route::delete('/room_delete/{id}', [AdminController::class, 'room_delete'])->name('room_list');
                     Route::get('/room_update/{id}', [AdminController::class,'room_update']);
                     Route::Post('/room_edit/{id}', [AdminController::class,'room_edit']);
-
+                    Route::get('/delete_booking/{id}', [AdminController::class,'delete_booking'])->name('delete_booking');
+                    Route::get('/approve_book/{id}', [AdminController::class,'approve_book']);
+                    Route::get('/Rejected_book/{id}', [AdminController::class,'Rejected_book']);
+                   
 
                     // ............................................................................
                    

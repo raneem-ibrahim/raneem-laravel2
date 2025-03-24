@@ -6,14 +6,14 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card shadow-lg border-0">
-                <img src="images/{{$room->image}}" class="card-img-top" alt="Room Image" style="height: 350px; object-fit: cover;">
+                <img src="{{ asset('images/' , $room->image) }}" class="card-img-top" alt="Room Image" style="height: 350px; object-fit: cover;">
                 <div class="card-body">
                     <h2 class="card-title text-primary">{{ $room->room_title }}</h2>
                     <p class="card-text">{{ $room->description }}</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Free Wifi:</strong> {{ $room->wifi }}</li>
                         <li class="list-group-item"><strong>Room Type:</strong> {{ $room->room_type }}</li>
-                        <li class="list-group-item"><strong>Price:</strong> ${{ $room->room_price }} / night</li>
+                        <li class="list-group-item"><strong>Price:</strong> ${{ $room->price }} / night</li>
                     </ul>
                 </div>
             </div>
@@ -98,5 +98,3 @@
     });
 </script>
 @endpush
-message.txt
-5 KB

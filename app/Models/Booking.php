@@ -26,4 +26,9 @@ class Booking extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function room()
+    {
+        return $this->belongsTo(Room::class, 'room_id'); // يجب أن يكون الحقل مطابقًا في جدول الحجوزات
+    }
+
 }

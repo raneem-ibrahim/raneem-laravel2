@@ -13,8 +13,8 @@ use App\Notifications\SendEmailNotification;
 class AdminController extends Controller
 {
     public function booking(){
-        $datas = booking::all();
-        return view('dashborde.pages.booking ' , compact('datas'));
+        $datas = Booking::with('room')->get();
+        return view('dashborde.pages.booking', compact('datas'));
     }
     public function create_room(){
        
@@ -82,6 +82,12 @@ public function mail(Request $request, $id)
         $data->delete();
         return redirect()->back();
      }
+//     public function room_delete($id)
+// {
+//     $data = Room::findOrFail($id);
+//     $data->delete();
+//     return redirect()->route('room_list')->with('success', 'Room deleted successfully');
+// }
      public function room_update($id)
      {
         $data = Room::findOrFail($id);
@@ -103,5 +109,26 @@ public function mail(Request $request, $id)
       }
       $data->save();
       return redirect()->back();
+     }
+
+     public function delete_booking($id)
+     {
+         $data =Booking::findOrFail($id);
+         $data->delete();
+         return redirect()->back();
+     }
+     public function approve_book($id)
+     {
+       $booking = Booking::find($id);
+       $booking->status='approve';
+       $booking->save();
+       return redirect()->back();
+     }
+     public function Rejected_book($id)
+     {
+       $booking = Booking::find($id);
+       $booking->status='rejected';
+       $booking->save();
+       return redirect()->back();
      }
 }
